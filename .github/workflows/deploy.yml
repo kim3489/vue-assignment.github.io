@@ -6,22 +6,25 @@ on:
       - main
 
 jobs:
-  build-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - uses: actions/checkout@v4  # v3에서 v4로 업데이트
 
-      - name: Install
-        run: yarn install
-
-      - name: Build
-        run: yarn build
-        env:
-          NODE_ENV: production
-
-      - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4  # Node.js 설정 추가
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+          node-version: '20'  # Node.js 20 버전 지정
+
+      # 빌드 단계
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+
+      # 배포 단계 (peaceiris/actions-gh-pages 대신 다른 방법 사용)
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4  # 예시: 다른 배포 액션 사용
+        with:
+          branch: gh-pages
+          folder: build  # 빌드 출력 폴더
