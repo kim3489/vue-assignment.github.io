@@ -1,21 +1,11 @@
 <template>
-  <div class="home">
-    <Banner :movie="featuredMovie" />
+  <Banner :movie="featuredMovie" />
 
-    <MovieRow
-      title="인기 영화"
-      :fetch-url="popularMoviesUrl"
-    />
-    <MovieRow
-      title="최신 영화"
-      :fetch-url="newReleasesUrl"
-    />
-    <MovieRow
-      title="액션 영화"
-      :fetch-url="actionMoviesUrl"
-    />
-  </div>
+  <movie-row title="인기 영화" :fetchUrl="popularMoviesUrl" />
+  <movie-row title="최신 영화" :fetchUrl="newReleasesUrl" />
+  <movie-row title="액션 영화" :fetchUrl="actionMoviesUrl" />
 </template>
+
 
 <script setup >
 import { ref, onMounted, onUnmounted } from 'vue';
@@ -24,11 +14,11 @@ import {  fetchFeaturedMovie,
   getURL4PopularMovies,
   getURL4ReleaseMovies,
   getURL4GenreMovies } from '@/util/movie/URL/URL';
-import Banner from '../../../views/home-main/banner.vue';
-import MovieRow from '../../../views/home-main/movie-row.vue';
+import Banner from '@/views/home-main/banner.vue';
+import MovieRow from '@/views/home-main/movie-row.vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-  library.add(faSearch, faUser);
+library.add(faSearch, faUser);
 
 const apiKey = ref(localStorage.getItem('TMDb-Key') || '');
 const featuredMovie = ref(null);
@@ -44,14 +34,14 @@ fetchFeaturedMovie(apiKey.value).then((movie) => {
   featuredMovie.value = movie;
 });
 
-    const handleScroll = () => {
-      const header = document.querySelector('.app-header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    };
+const handleScroll = () => {
+  const header = document.querySelector('.app-header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+};
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);

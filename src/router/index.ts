@@ -1,20 +1,22 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import SignIn from '@/components/sign-in/sign-in.vue'
 import Home from '@/components/home/home.vue'
-import HomeWishlist from "@/components/home/wishlist/home-wishlist.vue";
-import HomePopular from '@/components/home/popular/home-popular.vue'
+import HomeMain from '@/components/home/main/home-main.vue'
+import  HomeWishlist from "@/components/home/wishlist/home-wishlist.vue";
+import  HomePopular from '@/components/home/popular/home-popular.vue'
 import HomeSearch from "@/components/search/home-search.vue";
-const routes: Array<RouteRecordRaw> = [
+
+export const routes= [
   {
     path: '/',
-    name: 'Main',
+    name: 'Home',
     component: Home,
     meta: { requiresAuth: true },
     children: [
       {
         name: 'HomeMain',
         path: '/',
-        component: Home,
+        component: HomeMain,
       },
       {
         name: 'HomePopular',
