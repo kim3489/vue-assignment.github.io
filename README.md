@@ -21,6 +21,11 @@ Vue.js와 TMDB API를 활용한 영화 정보 제공 사이트입니다. 사용�
 - `src/App.vue`: 메인 애플리케이션 컴포넌트
 - `src/main.ts`: 애플리케이션 시작점
 
+### Clone the repository
+```
+git clone https://github.com/kim3489/vue-assignment.github.io
+```
+
 ## Project setup
 ```
 npm install
