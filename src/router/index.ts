@@ -18,17 +18,17 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         name: 'HomePopular',
-        path: 'popular',
-        component: () => HomePopular,
+        path: '/popular',
+        component: HomePopular,
       },
       {
         name: 'HomeWishList',
-        path: 'wishlist',
+        path: '/wishlist',
         component: HomeWishlist,
       },
       {
         name: 'HomeSearch',
-        path: 'search',
+        path: '/search',
         component:HomeSearch,
       }
     ]
