@@ -2,10 +2,10 @@
   "name": "vue-assignment",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vue-assignment.github.io",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
