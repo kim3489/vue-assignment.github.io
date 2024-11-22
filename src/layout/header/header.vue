@@ -17,6 +17,7 @@
         </nav>
       </div>
       <div class="header-right">
+        <span class="user-email">{{ userEmail }}</span>
         <button class="icon-button" @click="removeKey">
           <font-awesome-icon :icon="['fas', 'user']" />
         </button>
@@ -54,6 +55,7 @@ library.add(faSearch, faUser, faTicket, faBars, faTimes);
 const router = useRouter();
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
+const userEmail = ref('');
 
 const removeKey = () => {
   localStorage.removeItem('TMDb-Key');
@@ -68,8 +70,19 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
 };
 
+const getUserEmail = () => {
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const token = localStorage.getItem('TMDb-Key');
+
+  if (token) {
+    const user = users.find(user => user.password === token);
+    userEmail.value = user ? user.id : '';
+  }
+};
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
+  getUserEmail();
 });
 
 onBeforeUnmount(() => {
@@ -195,6 +208,12 @@ onBeforeUnmount(() => {
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.user-email {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
