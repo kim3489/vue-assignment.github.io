@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, ref, onMounted, computed } from 'vue'; // computed를 추가로 import
+import { defineComponent, ref, onMounted, watch } from 'vue'; // computed를 추가로 import
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faTh, faBars } from '@fortawesome/free-solid-svg-icons';
 import MovieGrid from '../../../views/views/movie-grid.vue';
@@ -53,7 +53,6 @@ const setView = (view: string) => {
   currentView.value = view;
 };
 
-
 const disableScroll = () => {
   document.body.style.overflow = 'hidden';
 };
@@ -65,6 +64,7 @@ const enableScroll = () => {
 onMounted(() => {
   disableScroll();
 })
+
 </script>
 
 <style scoped>
