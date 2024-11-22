@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import SignIn from '@/components/sign-in/sign-in.vue'
 import Home from '@/components/home/home.vue'
-
+import HomeWishlist from "@/components/home/wishlist/home-wishlist.vue";
+import HomePopular from '@/components/home/popular/home-popular.vue'
+import HomeSearch from "@/components/search/home-search.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -12,22 +14,22 @@ const routes: Array<RouteRecordRaw> = [
       {
         name: 'HomeMain',
         path: '/',
-        component: () => import('@/components/home/main/home-main.vue'),
+        component: Home,
       },
       {
         name: 'HomePopular',
         path: 'popular',
-        component: () => import('@/components/home/popular/home-popular.vue'),
+        component: () => HomePopular,
       },
       {
         name: 'HomeWishList',
         path: 'wishlist',
-        component: () => import('@/components/home/wishlist/home-wishlist.vue'),
+        component: HomeWishlist,
       },
       {
         name: 'HomeSearch',
         path: 'search',
-        component: () => import('@/components/search/home-search.vue'),
+        component:HomeSearch,
       }
     ]
   },
