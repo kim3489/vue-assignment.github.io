@@ -31,4 +31,16 @@ const tryRegister = (email, password, success, fail) => {
     }
 };
 
-export { tryLogin, tryRegister };
+const getUserEmail = () => {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const token = localStorage.getItem('TMDb-Key');
+
+    if (token) {
+        const user = users.find(user => user.password === token);
+        return user ? user.id : null;
+    }
+
+    return null;
+};
+
+export { tryLogin, tryRegister,getUserEmail };
