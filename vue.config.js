@@ -5,7 +5,5 @@
 // })
 
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-        ? '/vue-assignment.github.io/'
-        : '/'
+    publicPath: '/dist/',
 }
