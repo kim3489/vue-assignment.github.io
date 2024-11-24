@@ -12,7 +12,7 @@
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "sourceMap": true,
-    "baseUrl": " https://kim3489.github.io/vue-assignment.github.io/",
+    "baseUrl": " .",
     "types": [
       "webpack-env",
       "jest"
