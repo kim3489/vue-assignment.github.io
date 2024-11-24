@@ -29,13 +29,8 @@ export default defineComponent({
       return props.movie ? `https://image.tmdb.org/t/p/original${props.movie.backdrop_path}` : '';
     });
 
-    const goToDetails = () => {
-      router.push({ name: 'MovieDetails', params: { id: props.movie.id } });
-    };
-
     return {
       backdropUrl,
-      goToDetails
     };
   }
 });
