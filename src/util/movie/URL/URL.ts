@@ -22,5 +22,8 @@ const getURL4GenreMovies = (apiKey: string, genre: string, page = 1) => {
     return `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genre}&language=ko-KR&page=${page}`;
 }
 
+const getURL4DetailsMovies=(apiKey: string, page=1) => {
+    return `https://api.themoviedb.org/3/movie/movie_id?api_key=${apiKey}&language=ko-KR&page=${page}`;
+}
 
-export { fetchFeaturedMovie, getURL4PopularMovies, getURL4ReleaseMovies, getURL4GenreMovies };
+export { fetchFeaturedMovie, getURL4PopularMovies, getURL4ReleaseMovies, getURL4GenreMovies,getURL4DetailsMovies};
