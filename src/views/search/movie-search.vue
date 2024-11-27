@@ -1,4 +1,8 @@
 <template>
+  <div>
+    <input v-model="searchKeyword" @keyup.enter="searchMovie" />
+    <button @click="searchMovie">Search</button>
+  </div>
   <div class="dropdown-container">
     <label>선호하는 설정을 선택하세요</label>
     <div v-for="(options, key) in dropdowns" :key="key" class="custom-select">

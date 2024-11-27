@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import { useRouter } from 'vue-router';
+
 
 
 export default defineComponent({
@@ -23,14 +23,12 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const router = useRouter();
-
     const backdropUrl = computed(() => {
       return props.movie ? `https://image.tmdb.org/t/p/original${props.movie.backdrop_path}` : '';
     });
 
     return {
-      backdropUrl,
+      backdropUrl
     };
   }
 });

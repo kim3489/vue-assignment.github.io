@@ -21,6 +21,9 @@
     />
     <MovieInfiniteScroll
         v-if="currentView === 'list'"
+        :apiKey="apiKey"
+        :sortingOrder="'all'"
+        :voteAverage="-1"
         title="인기 영화"
         :fetchUrl="fetchURL"
     />
@@ -40,7 +43,9 @@ library.add(faTh, faBars);
 
 defineComponent({
   components: {
-    FontAwesomeIcon
+    FontAwesomeIcon,
+    MovieGrid,
+    MovieInfiniteScroll,
   }
 });
 
@@ -82,6 +87,7 @@ onMounted(() => {
   margin-left: 10px;
   cursor: pointer;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .view-toggle button.active {
