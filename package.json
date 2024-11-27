@@ -2,7 +2,6 @@
   "name": "vue-assignment",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kim3489.github.io/vue-assignment.github.io/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -15,7 +14,6 @@
     "@types/axios": "^0.9.36",
     "axios": "^1.7.7",
     "core-js": "^3.8.3",
-    "pinia": "^2.2.6",
     "register-service-worker": "^1.7.2",
     "vee-validate": "^4.14.6",
     "vue": "^3.2.13",
@@ -43,12 +41,10 @@
     "cypress": "^9.7.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "gh-pages": "^6.2.0",
     "jest": "^27.0.5",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "ts-jest": "^27.0.4",
     "typescript": "^4.9.5",
-    "vitest": "^2.1.4"
   }
 }
