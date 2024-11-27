@@ -6,7 +6,7 @@ on:
       - main  # 또는 master
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -17,19 +17,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
+      - name: Checkout repo # 저장소 체크아웃
+        uses: actions/checkout@v4
 
-      - name: Cache dependencies
-        uses: actions/cache@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-
+          node-version: "20"
 
       - name: Install dependencies
         run: npm install
@@ -38,10 +32,25 @@ jobs:
         run: npm run build  # 프로젝트의 빌드 스크립트에 맞게 수정
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           path: './dist'
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+  deploy: # 두 번째 작업: 배포
+    name: Deploy to GitHub Pages
+    needs: build # build 작업이 완료되어야 실행됨
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' # 브랜치 확인
+
+    steps:
+      - name: Download artifact # 빌드된 파일 다운로드
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
+      - name: Deploy to GitHub Pages # GitHub Pages로 배포
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
+          publish_dir: ./dist
