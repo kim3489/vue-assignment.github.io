@@ -1,15 +1,11 @@
 {
   "name": "vue-assignment",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
@@ -18,7 +14,6 @@
     "@types/axios": "^0.9.36",
     "axios": "^1.7.7",
     "core-js": "^3.8.3",
-    "pinia": "^2.2.6",
     "register-service-worker": "^1.7.2",
     "vee-validate": "^4.14.6",
     "vue": "^3.2.13",
