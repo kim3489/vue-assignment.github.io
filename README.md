@@ -15,6 +15,7 @@ Vue.js와 TMDB API를 활용한 영화 정보 제공 사이트입니다. 사용�
 - `src/assets`: 스타일 시트 및 이미지 파일
 - `src/components`: Vue 컴포넌트
 - `src/layout`: 페이지 레이아웃 설정
+- `src/store`: 애플리케이션의 전역 상태를 관리하는 컨테이너
 - `src/util`: 페이지 데이터 변환 및 가공
 - `src/views`: 페이지 뷰
 - `src/router`: Vue Router 설정
