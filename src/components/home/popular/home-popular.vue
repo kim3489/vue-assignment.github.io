@@ -21,6 +21,9 @@
     />
     <MovieInfiniteScroll
         v-if="currentView === 'list'"
+        :apiKey="apiKey"
+        :sortingOrder="'all'"
+        :voteAverage="-1"
         title="인기 영화"
         :fetchUrl="fetchURL"
     />
@@ -28,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, ref, onMounted, computed } from 'vue'; // computed를 추가로 import
+import { defineComponent, ref, onMounted, watch } from 'vue'; // computed를 추가로 import
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faTh, faBars } from '@fortawesome/free-solid-svg-icons';
 import MovieGrid from '../../../views/views/movie-grid.vue';
@@ -40,7 +43,9 @@ library.add(faTh, faBars);
 
 defineComponent({
   components: {
-    FontAwesomeIcon
+    FontAwesomeIcon,
+    MovieGrid,
+    MovieInfiniteScroll,
   }
 });
 
@@ -53,7 +58,6 @@ const setView = (view: string) => {
   currentView.value = view;
 };
 
-
 const disableScroll = () => {
   document.body.style.overflow = 'hidden';
 };
@@ -65,6 +69,7 @@ const enableScroll = () => {
 onMounted(() => {
   disableScroll();
 })
+
 </script>
 
 <style scoped>
@@ -82,6 +87,7 @@ onMounted(() => {
   margin-left: 10px;
   cursor: pointer;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .view-toggle button.active {

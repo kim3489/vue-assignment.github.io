@@ -1,7 +1,7 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   publicPath: process.env.NODE_ENV === 'production'
-      ? '/vue-assignment.github.io.git/'
+      ? '/vue-assignment.github.io/'
       : '/',
-  outputDir: 'docs'
+  outputDir: 'dist'
 })

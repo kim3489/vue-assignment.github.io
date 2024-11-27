@@ -12,28 +12,74 @@ Vue.js와 TMDB API를 활용한 영화 정보 제공 사이트입니다. 사용�
 
 ## 프로젝트 구조
 
-- `src/assets`: 스타일 시트 및 이미지 파일
-- `src/components`: Vue 컴포넌트
-- `src/layout`: 페이지 레이아웃 설정
-- `src/util`: 페이지 데이터 변환 및 가공
-- `src/views`: 페이지 뷰
-- `src/router`: Vue Router 설정
-- `src/App.vue`: 메인 애플리케이션 컴포넌트
-- `src/main.ts`: 애플리케이션 시작점
+```csharp
+📦 src
+├── 📂 assets              # 스타일 시트 및 이미지 파일
+│    ├── css            
+├── 📂 components          # Vue 컴포넌트
+│   ├── 📂Home
+│   │    ├── home.vue
+│   │    ├── home-main.vue
+│   │    ├── home-popular.vue
+│   │    ├── home-wishlist.vue
+│   ├── 📂search    
+│   │    ├── home-search.vue
+│   ├── 📂sign-in
+│        ├── sign-in.vue  
+│ 
+├── 📂 layout             # 페이지 레이아웃 설정
+│       ├── header.vue
+├── 📂 router            # Vue Router 설정
+│       ├── index.ts
+├── 📂 store            #  애플리케이션 전역 상태 관리
+│       ├── index.ts     
+│        
+├── 📂 util              # 페이지 데이터 변환 및 가공
+│   ├── auth.service.js
+│   ├── URL.ts
+│   ├── wishlist.ts
+│
+├── 📂 views              # 페이지 뷰 설정
+│   ├── 📂Home-main
+│   │     ├── banner.vue
+│   │     ├── movie-row.vue
+│   ├── 📂Home-wishlist
+│   │     ├── movie-wishlist.vue
+│   ├── 📂search
+│   │     ├── movie-search.vue
+│   ├── 📂views
+│   │     ├── movie-grid.vue
+│   │     ├── movie-infinite-scroll.vue
+│
+├──App.vue   # 메인 애플리케이션 컴포넌트
+├──main.ts   # 애플리케이션 시작점
+```
 
-## Project setup
+---
+## 저장소를 클론합니다.
+```
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+
+## 필요한 패키지를 설치합니다
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
+## 프로덕션을 위한 컴파일 및 최소화
 ```
 npm run build
+```
+
+## .env 파일을 생성하고 TMDB API 키를 설정합니다:
+```
+VUE_APP_TMDB_API_KEY=your_api_key_here
+```
+
+##  개발 서버를 실행합니다.
+```
+npm run serve
 ```
 
 ### Run your unit tests

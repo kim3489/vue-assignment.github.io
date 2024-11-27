@@ -267,7 +267,8 @@ input {
   width: 100%;
   height: 2.5rem;
   padding: 0;
-  margin: 0;
+  margin: 10px;
+  overflow-y: auto;
 }
 
 

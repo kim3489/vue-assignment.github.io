@@ -2,12 +2,10 @@
   "name": "vue-assignment",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kim3489.github.io/vue-assignment.github.io.git",
+  "homepage": "https://kim3489.github.com/vue-assignment.github.io",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -19,6 +17,8 @@
     "@types/axios": "^0.9.36",
     "axios": "^1.7.7",
     "core-js": "^3.8.3",
+    "emitter": "^0.0.5",
+    "mitt": "^3.0.1",
     "pinia": "^2.2.6",
     "register-service-worker": "^1.7.2",
     "vee-validate": "^4.14.6",
@@ -31,6 +31,7 @@
     "@types/node": "^22.9.0",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "@vitejs/plugin-vue": "^5.2.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-e2e-cypress": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
@@ -53,6 +54,7 @@
     "sass-loader": "^12.0.0",
     "ts-jest": "^27.0.4",
     "typescript": "^4.9.5",
+    "vite": "^6.0.0",
     "vitest": "^2.1.4"
   }
 }
