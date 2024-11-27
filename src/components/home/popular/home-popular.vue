@@ -1,16 +1,11 @@
 <template>
   <div class="popular-container">
     <div class="view-toggle">
-      <button @click="() => {
-        setView('grid');
-        disableScroll();
-      }" :class="{ active: currentView === 'grid' }">
+      <button @click="
+        setView('grid')" :class="{ active: currentView === 'grid' }">
         <font-awesome-icon :icon="['fas', 'th']" />
       </button>
-      <button @click="() => {
-        setView('list');
-        enableScroll();
-      }" :class="{ active: currentView === 'list' }">
+      <button @click="setView('list')" :class="{ active: currentView === 'list' }">
         <font-awesome-icon :icon="['fas', 'bars']" />
       </button>
     </div>
@@ -21,11 +16,7 @@
     />
     <MovieInfiniteScroll
         v-if="currentView === 'list'"
-        :apiKey="apiKey"
-        :sortingOrder="'all'"
-        :voteAverage="-1"
         title="인기 영화"
-        :fetchUrl="fetchURL"
     />
   </div>
 </template>
@@ -56,6 +47,7 @@ const currentView = ref('grid');
 
 const setView = (view: string) => {
   currentView.value = view;
+  fetchURL;
 };
 
 const disableScroll = () => {
@@ -67,7 +59,7 @@ const enableScroll = () => {
 };
 
 onMounted(() => {
-  disableScroll();
+  fetchURL;
 })
 
 </script>
