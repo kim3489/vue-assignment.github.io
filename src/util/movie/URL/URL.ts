@@ -23,4 +23,4 @@ const getURL4GenreMovies = (apiKey: string, genre: string, page = 1) => {
 }
 
 
-export { fetchFeaturedMovie, getURL4PopularMovies, getURL4ReleaseMovies, getURL4GenreMovies };
+export { fetchFeaturedMovie, getURL4PopularMovies, getURL4ReleaseMovies, getURL4GenreMovies};

@@ -2,14 +2,15 @@
   "name": "vue-assignment",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kim3489.github.io/vue-assignment.github.io/",
+  "homepage": "https://kim3489.github.io/vue-assignment.github.io.git",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
