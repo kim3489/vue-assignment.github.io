@@ -2,7 +2,7 @@
   "name": "vue-assignment",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kim3489.github.io/vue-assignment.github.io.git",
+  "homepage": "https://kim3489.github.io/vue-assignment.github.io/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
