@@ -1,11 +1,10 @@
 <template>
   <div class="popular-container">
     <div class="view-toggle">
-      <button @click="
-        setView('grid')" :class="{ active: currentView === 'grid' }">
+      <button :class="{ active: currentView === 'grid' }" @click="setView('grid')" >
         <font-awesome-icon :icon="['fas', 'th']" />
       </button>
-      <button @click="setView('list')" :class="{ active: currentView === 'list' }">
+      <button :class="{ active: currentView === 'list' }" @click="setView('list')" >
         <font-awesome-icon :icon="['fas', 'bars']" />
       </button>
     </div>

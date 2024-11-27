@@ -38,7 +38,7 @@ jobs:
         run: npm run build  # 프로젝트의 빌드 스크립트에 맞게 수정
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: './dist'
 
